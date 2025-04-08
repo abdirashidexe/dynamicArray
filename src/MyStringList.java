@@ -12,13 +12,13 @@ public class MyStringList implements StringList{
         return specifiedIndex;
     }
 
-    // Method #1
+    // Method #2
     public void set(int index, String value)
     {
 
     }
 
-    // Method #1
+    // Method #3
     public void add(String value)
     {
 
