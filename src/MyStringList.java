@@ -1,15 +1,24 @@
 public class MyStringList implements StringList{
+    private String[] elements; // private int[] data, int version
+    private int size;
+    private static final int DEFAULT_CAPACITY = 10;
+
+    public MyStringList() {
+        this.elements = new String[DEFAULT_CAPACITY];
+        this.size = 0;
+    }
+
     // Method #1
-    public String get(int index)
+    public String get(int index) // ex. StringList<> myNewList = new StringList<>; --> myNewList.add("hi") --> myNewList.get(0) --> "hi"
     {
-        String specifiedIndex = "";
+        String returnedString = data[index];
 
-        // return string that's at inputted index
-
-        // if inputted index is < 0 or index >= size, return error
-
-        // finally return string at inputted index
-        return specifiedIndex;
+        /*if (index > 0 || >= size())
+        {
+            return error;
+        }
+        */
+        return returnedString;
     }
 
     // Method #2
@@ -22,5 +31,25 @@ public class MyStringList implements StringList{
     public void add(String value)
     {
 
+    }
+   
+    @Override
+    public String remove(int index) {
+        String removed = elements[index];
+        for (int i = index; i < size - 1; i++) {
+            elements[i] = elements[i + 1];
+        }
+        size--;
+        return removed;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public int capacity() {
+        return elements.length;
     }
 }
