@@ -11,13 +11,13 @@ public class MyStringList implements StringList{
     // Method #1
     public String get(int index) // ex. StringList<> myNewList = new StringList<>; --> myNewList.add("hi") --> myNewList.get(0) --> "hi"
     {
-        String returnedString = data[index];
+        String returnedString = elements[index];
 
-        /*if (index > 0 || >= size())
+        if (index > 0 || index >= size)
         {
-            return error;
+            throw new IndexOutOfBoundsException("Out of bounds.");
         }
-        */
+        
         return returnedString;
     }
 
@@ -30,7 +30,7 @@ public class MyStringList implements StringList{
     // Method #3
     public void add(String value)
     {
-
+        
     }
    
     @Override
