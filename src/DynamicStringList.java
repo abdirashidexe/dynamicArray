@@ -1,9 +1,9 @@
-public class DyanmicStringList implements StringList{
+public class DynamicStringList implements StringList{
     private String[] elements; // private int[] data, int version
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
 
-    public DyanmicStringList() {
+    public DynamicStringList() {
         this.elements = new String[DEFAULT_CAPACITY];
         this.size = 0;
     }
