@@ -1,9 +1,9 @@
-public class MyStringList implements StringList{
+public class DyanmicStringList implements StringList{
     private String[] elements; // private int[] data, int version
     private int size;
     private static final int DEFAULT_CAPACITY = 10;
 
-    public MyStringList() {
+    public DyanmicStringList() {
         this.elements = new String[DEFAULT_CAPACITY];
         this.size = 0;
     }
@@ -24,13 +24,21 @@ public class MyStringList implements StringList{
     // Method #2
     public void set(int index, String value)
     {
+        elements[index] = value;
 
+        if (index > 0 || index >= size)
+        {
+            throw new IndexOutOfBoundsException("Out of bounds.");
+        }
     }
 
     // Method #3
     public void add(String value)
     {
-        
+        size++;
+        int newLength = elements.length + 1;
+
+        elements[newLength] = value;
     }
    
     @Override
